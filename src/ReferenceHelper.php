@@ -254,7 +254,7 @@ class ReferenceHelper
      */
     protected function adjustProtectedCells(Worksheet $worksheet, $beforeCellAddress, $numberOfColumns, $numberOfRows): void
     {
-        $aProtectedCells = $worksheet->getProtectedCells();
+        $aProtectedCells = $worksheet->getProtectedCellRanges();
         ($numberOfColumns > 0 || $numberOfRows > 0) ?
             uksort($aProtectedCells, ['self', 'cellReverseSort']) : uksort($aProtectedCells, ['self', 'cellSort']);
         foreach ($aProtectedCells as $key => $value) {
